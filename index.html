@@ -1,8 +1,84 @@
-<link rel="manifest" href="manifest.json" />
-<meta name="theme-color" content="#111827" />
-<meta name="mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-<meta name="apple-mobile-web-app-title" content="Kalimba" />
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalimba Virtual</title>
 
-<link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#111827" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Kalimba" />
+  
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+</head>
+<body>
+  <main class="app">
+    <h1>🎵 Kalimba Virtual</h1>
+
+    <div class="kalimba" id="kalimba">
+      <button class="key" data-note="261.63" data-key="A">
+        <span>A</span>
+        <small>C4</small>
+      </button>
+
+      <button class="key" data-note="293.66" data-key="S">
+        <span>S</span>
+        <small>D4</small>
+      </button>
+
+      <button class="key" data-note="329.63" data-key="D">
+        <span>D</span>
+        <small>E4</small>
+      </button>
+
+      <button class="key" data-note="349.23" data-key="F">
+        <span>F</span>
+        <small>F4</small>
+      </button>
+
+      <button class="key" data-note="392.00" data-key="G">
+        <span>G</span>
+        <small>G4</small>
+      </button>
+
+      <button class="key" data-note="440.00" data-key="H">
+        <span>H</span>
+        <small>A4</small>
+      </button>
+
+      <button class="key" data-note="493.88" data-key="J">
+        <span>J</span>
+        <small>B4</small>
+      </button>
+
+      <button class="key" data-note="523.25" data-key="K">
+        <span>K</span>
+        <small>C5</small>
+      </button>
+    </div>
+
+    <p class="hint">
+      Klik tines atau gunakan keyboard:
+      A S D F G H J K
+    </p>
+  </main>
+
+  <script src="script.js"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", async () => {
+      try {
+        await navigator.serviceWorker.register("./sw.js");
+        console.log("Service Worker Registered");
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  }
+</script>
+</body>
+</html>
