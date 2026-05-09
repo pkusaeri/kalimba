@@ -1,3 +1,82 @@
+@media (max-width: 700px) {
+  body {
+    padding: 12px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .kalimba {
+    gap: 6px;
+    padding: 14px;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: auto;
+    box-sizing: border-box;
+  }
+
+  .key {
+    width: 42px;
+    min-width: 42px;
+  }
+}
+
+/* HP Landscape */
+@media (max-width: 900px) and (orientation: landscape) {
+  body {
+    padding: 8px;
+  }
+
+  .app {
+    width: 100%;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .kalimba {
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .key {
+    width: 48px;
+    min-width: 48px;
+    padding-bottom: 10px;
+  }
+
+  .key:nth-child(1),
+  .key:nth-child(8) {
+    height: 120px;
+  }
+
+  .key:nth-child(2),
+  .key:nth-child(7) {
+    height: 150px;
+  }
+
+  .key:nth-child(3),
+  .key:nth-child(6) {
+    height: 180px;
+  }
+
+  .key:nth-child(4),
+  .key:nth-child(5) {
+    height: 210px;
+  }
+
+  .hint {
+    margin-top: 12px;
+    font-size: 12px;
+  }
+}
 * {
   box-sizing: border-box;
 }
